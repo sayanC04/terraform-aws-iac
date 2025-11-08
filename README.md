@@ -1,7 +1,7 @@
 # terraform-aws-iac
 Infrastructure as Code (IaC) project to provision and manage secure, scalable AWS cloud infrastructure using Terraform.
 
-![Cloud Infrastructure Illustration](https://images.unsplash.com/photo-1503437313881-503a91226416?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)
+![Cloud Infrastructure Illustration](https://via.placeholder.com/1200x400.png?text=Terraform+AWS+IaC)
 
 ## Overview
 
@@ -62,21 +62,34 @@ terraform -version
 
 ## Quick start
 
-From the repository root in PowerShell:
+
+Which folder to run commands from
+
+- Backend infrastructure (creates S3 bucket/DynamoDB for remote state):
+
+```powershell
+cd c:\Users\User\Desktop\terraform-aws-iac\Terraform_backend
+terraform init
+terraform validate
+terraform plan
+terraform apply
+```
+
+- Main infrastructure (uses the backend once configured):
 
 ```powershell
 cd c:\Users\User\Desktop\terraform-aws-iac\Terraform
-# initialize providers and backend (this will configure remote state if backend configured)
 terraform init
-
-# see the plan
-terraform plan -var-file="terraform.tfvars"
-
-# apply (be careful: creates resources in your AWS account)
-terraform apply -var-file="terraform.tfvars"
+terraform validate
+terraform plan
+terraform apply
 ```
 
-If you want to run interactively without a tfvars file you can use `-var 'aws_region=us-east-1'` and other `-var` flags.
+Notes:
+- The `terraform init` command initializes providers and configures the backend (if configured). If a remote backend is present and reachable, Terraform may prompt to migrate local state to the backend.
+- `terraform validate` checks syntax and basic configuration correctness.
+- `terraform plan` shows what will change. `terraform apply` applies the changes. Use `terraform destroy` to tear down resources when needed.
+- If you have variable files like `terraform.tfvars` in the folder, Terraform will automatically load them. You can also set variables with `-var` on the CLI when necessary.
 
 ## Changing configuration (region, sizes, etc.)
 
