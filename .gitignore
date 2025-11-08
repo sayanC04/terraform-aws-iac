@@ -1,0 +1,24 @@
+# Terraform state and cache
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+.terraform.tfstate
+
+# Local IDE / OS files
+.vscode/
+*.log
+Thumbs.db
+desktop.ini
+
+# Secrets and keys
+id_ed25519
+id_rsa
+*.pem
+*.key
+
+# Other
+.DS_Store
