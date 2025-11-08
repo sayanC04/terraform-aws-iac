@@ -1,7 +1,7 @@
 # terraform-aws-iac
 Infrastructure as Code (IaC) project to provision and manage secure, scalable AWS cloud infrastructure using Terraform.
 
-![Cloud Infrastructure Illustration](https://via.placeholder.com/1200x400.png?text=Terraform+AWS+IaC)
+![Terraform AWS Infrastructure](./README_images/terraform_banner.svg)
 
 ## Overview
 
